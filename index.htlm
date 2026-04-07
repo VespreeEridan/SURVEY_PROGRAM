@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen Export</title>
+
+  <!-- Librairies externes (si utilisées dans CodePen) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <style>
+  /* ===== CSS du CodePen ===== */
+
+  /* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0f;
+  color: #e0e0e0;
+  font-family: 'Courier New', monospace;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+.screen.active {
+  display: block;
+}
+
+h1 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.avatar-preview {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+}
+
+.avatar-body {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #444;
+  margin: 0 auto;
+  border: 2px solid #666;
+  transition: background 0.3s;
+}
+
+.avatar-face {
+  font-size: 28px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+input[type="text"] {
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.opt-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px;
+  background: #111;
+  border: 1px solid #333;
+  color: #ccc;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.opt-btn:hover {
+  border-color: #666;
+  color: #fff;
+}
+
+.opt-btn.selected {
+  border-color: #888;
+  background: #222;
+  color: #fff;
+}
+
+.next-btn {
+  margin-top: 1.5rem;
+  padding: 10px 30px;
+  background: transparent;
+  border: 1px solid #555;
+  color: #ccc;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.next-btn:hover {
+  border-color: #aaa;
+  color: #fff;
+}
+
+.question-counter {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.glitch {
+  animation: glitch 0.5s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); color: #ff4444; }
+  25% { transform: translate(-2px, 1px); color: #ff0000; }
+  50% { transform: translate(2px, -1px); color: #cc0000; }
+  75% { transform: translate(-1px, 2px); color: #ff2222; }
+}
+
+.rejection-msg {
+  font-size: 18px;
+  color: #ff4444;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease;
+}
+
+.rejection-sub {
+  font-size: 12px;
+  color: #666;
+  letter-spacing: 3px;
+  animation: fadeIn 2s ease;
+  margin-top: 1rem;
+}
+
+.deleted-avatar {
+  opacity: 0.15;
+  filter: grayscale(100%);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.shake {
+  animation: shake 0.6s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+.static-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent, transparent 2px,
+    rgba(0,0,0,0.3) 2px, rgba(0,0,0,0.3) 4px
+  );
+  transition: opacity 0.3s;
+}
+
+.final-quote {
+  font-size: 13px;
+  color: #444;
+  margin-top: 2rem;
+  font-style: italic;
+  line-height: 1.8;
+  animation: fadeIn 3s ease;
+  white-space: pre-line;
+} */
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HTML du CodePen ===== -->
+
+  <!-- <div id="app">
+  <div class="static-overlay" id="static"></div>
+
+  <div class="screen active" id="welcome-screen">
+    <h1>SURVEY_PROGRAM</h1>
+    <p class="subtitle">SOMMES-NOUS CONNECTÉS ?</p>
+    <div class="avatar-preview">
+      <div class="avatar-body"><div class="avatar-face">?</div></div>
+    </div>
+    <p style="font-size:13px;color:#888;line-height:1.8;margin-bottom:2rem;">EXCELLENT, NOUS POUVONS COMMENCER : IL TE FAUT CRÉER UN RÉCEPTACLE. </p>
+    <button class="next-btn" onclick="showScreen('name-screen')">COMMENCER</button>
+  </div>
+
+  <div class="screen" id="name-screen">
+    <h1>SON NOM</h1>
+    <p class="subtitle">COMMENT S’APPELLERA TA CRÉATION ?</p>
+    <div class="avatar-preview">
+      <div class="avatar-body" id="av1"><div class="avatar-face" id="face1">?</div></div>
+    </div>
+    <div class="form-group">
+      <label>NOM</label>
+      <input type="text" id="char-name" placeholder="Écris un nom..." maxlength="20" oninput="updateFace()" />
+    </div>
+    <button class="next-btn" onclick="nextFromName()">CONFIRMER</button>
+  </div>
+
+  <div class="screen" id="q1-screen">
+    <p class="question-counter">QUESTION 1 / 3</p>
+    <h1>SON ARME</h1>
+    <p class="subtitle">CHOISIS UNE ARME</p>
+    <div class="avatar-preview">
+      <div class="avatar-body" id="av2"><div class="avatar-face" id="face2">?</div></div>
+    </div>
+    <div class="form-group" style="margin-top:1rem;">
+      
+      <div class="options" id="opts1">
+        <button class="opt-btn" onclick="selectOpt('opts1',this,'#2a3a5a','😤')">Courage</button>
+        <button class="opt-btn" onclick="selectOpt('opts1',this,'#3a2a5a','🧠')">Épée</button>
+        <button class="opt-btn" onclick="selectOpt('opts1',this,'#3a5a2a','💚')">Gentillesse</button>
+        <button class="opt-btn" onclick="selectOpt('opts1',this,'#5a3a2a','🔥')">Arc</button>
+      </div>
+    </div>
+    <button class="next-btn" onclick="nextQ('q1-screen','q2-screen')">CONFIRMER</button>
+  </div>
+
+  <div class="screen" id="q2-screen">
+    <p class="question-counter">QUESTION 2 / 3</p>
+    <h1>SA DATE DE NAISSANCE</h1>
+    <p class="subtitle">QUAND SERA-T-IL NÉ</p>
+    <div class="avatar-preview">
+      <div class="avatar-body" id="av3"><div class="avatar-face" id="face3">?</div></div>
+    </div>
+    <div class="form-group" style="margin-top:1rem;">
+      <div class="options" id="opts2">
+        <button class="opt-btn" onclick="selectOpt('opts2',this,null,null)">Jour</button>
+        <button class="opt-btn" onclick="selectOpt('opts2',this,null,null)">Taureau</button>
+        <button class="opt-btn" onclick="selectOpt('opts2',this,null,null)">Demain</button>
+        <button class="opt-btn" onclick="selectOpt('opts2',this,null,null)">1er novembre</button>
+      </div>
+    </div>
+    <button class="next-btn" onclick="nextQ('q2-screen','q3-screen')">CONFIRMER</button>
+  </div>
+
+  <div class="screen" id="q3-screen">
+    <p class="question-counter">QUESTION 3 / 3</p>
+    <h1>TES RÊVES ET TES ESPOIRS</h1>
+    <p class="subtitle">QU’ATTENDS-TU DE TA CRÉATION (ELLE N'ENTENDRA PAS)</p>
+    <div class="avatar-preview">
+      <div class="avatar-body" id="av4"><div class="avatar-face" id="face4">?</div></div>
+    </div>
+    <div class="form-group" style="margin-top:1rem;">
+      <label>SOIS HONNÊTE</label>
+      <input type="text" id="char-wish" placeholder="Je souhaite..." maxlength="40" />
+    </div>
+    <button class="next-btn" onclick="triggerRejection()">CONFIRMER</button>
+  </div>
+
+  <div class="screen" id="loading-screen">
+    <h1>Assemblage...</h1>
+    <div class="avatar-preview">
+      <div class="avatar-body" id="av5"><div class="avatar-face" id="face5">...</div></div>
+    </div>
+    <div id="loading-text" style="font-size:12px;color:#555;margin-top:1rem;">Finalisation du réceptacle...</div>
+  </div>
+
+  <div class="screen" id="rejection-screen">
+    <div class="avatar-preview deleted-avatar" id="rej-av-wrap">
+      <div class="avatar-body" id="av6"><div class="avatar-face" id="face6">?</div></div>
+    </div>
+    <div class="rejection-msg" id="rej-name-line">......</div>
+    <div class="rejection-msg glitch" style="font-size:14px;margin-top:0.5rem;">Votre création a été rejetée.</div>
+    <div class="rejection-sub">Vos choix n’ont aucune importance.</div>
+    <div class="final-quote" id="final-quote"></div>
+  </div>
+</div> -->
+
+
+
+  <script>
+  // ===== JavaScript du CodePen =====
+
+  // let charName = '';
+let selectedColor = '#333';
+let selectedFace = '?';
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function updateFace() {
+  const n = document.getElementById('char-name').value;
+  charName = n;
+  const initials = n.length > 0 ? n[0].toUpperCase() : '?';
+  document.getElementById('face1').textContent = initials;
+}
+
+function selectOpt(groupId, btn, color, face) {
+  document.querySelectorAll('#' + groupId + ' .opt-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (color) { selectedColor = color; syncAvatars(); }
+  if (face) { selectedFace = face; syncFaces(); }
+}
+
+function syncAvatars() {
+  ['av2','av3','av4','av5','av6'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.background = selectedColor;
+  });
+}
+
+function syncFaces() {
+  const initials = charName.length > 0 ? charName[0].toUpperCase() : selectedFace;
+  ['face2','face3','face4','face5','face6'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = initials;
+  });
+}
+
+function nextFromName() {
+  if (!charName.trim()) { alert('Please enter a name.'); return; }
+  syncFaces();
+  showScreen('q1-screen');
+}
+
+function nextQ(from, to) {
+  showScreen(to);
+  syncAvatars();
+  syncFaces();
+}
+
+function triggerRejection() {
+  showScreen('loading-screen');
+  syncAvatars();
+  syncFaces();
+
+  const msgs = ['Sauvegarde...', 'Lien entre âme et réceptacle...', 'Connexion établie...', 'Racines...'];
+  let i = 0;
+  const iv = setInterval(() => {
+    if (i < msgs.length) {
+      document.getElementById('loading-text').textContent = msgs[i++];
+    }
+  }, 500);
+
+  setTimeout(() => {
+    clearInterval(iv);
+    document.getElementById('static').style.opacity = '0.8';
+    setTimeout(() => {
+      document.getElementById('static').style.opacity = '0';
+      showRejection();
+    }, 600);
+  }, 2400);
+}
+
+function showRejection() {
+  showScreen('rejection-screen');
+  document.getElementById('av6').style.background = selectedColor;
+  const initials = charName.length > 0 ? charName[0].toUpperCase() : '?';
+  document.getElementById('face6').textContent = initials;
+  document.getElementById('rej-name-line').textContent = '"' + (charName || 'Stranger') + '"';
+  document.getElementById('rej-av-wrap').classList.add('shake');
+
+  setTimeout(() => {
+    document.getElementById('final-quote').textContent =
+      '"Dans ce monde, personne ne peut choisir qui il est."';
+  }, 2500);
+}
+
+  </script>
+
+</body>
+</html>
